@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-git-rev-sync",     "homepage": "https://github.com/npmtest/node-npmtest-git-rev-sync",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-git-rev-sync.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [git-rev-sync (v1.9.0)](https://github.com/kurttheviking/git-rev-sync-js)  [![npm package](https://img.shields.io/npm/v/npmtest-git-rev-sync.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-git-rev-sync) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-git-rev-sync.svg)](https://travis-ci.org/npmtest/node-npmtest-git-rev-sync)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-git-rev-sync",
+    "keywords": [
+        "coverage",
+        "test",
+        "git-rev-sync"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_git_rev_sync.js",
+    "name": "npmtest-git-rev-sync",
+    "nameAlias": "npmtest_git_rev_sync",
+    "nameOriginal": "npmtest-git-rev-sync",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-git-rev-sync.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.24"
+}
